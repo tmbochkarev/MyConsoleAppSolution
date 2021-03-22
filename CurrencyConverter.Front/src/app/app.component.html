@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+            <div class="input-group mt-3 mb-3">
+                <input type="text" class="form-control" placeholder="Количество рублей" aria-label="Количество рублей"
+                    [(ngModel)]="rubles">
+                <button class="btn btn-outline-secondary" type="button" (click)="convert()">Конвертировать</button>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Валюта</th>
+                        <th scope="col">Количество</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let convetResult of convetResults; index as i">
+                        <th scope="row">{{i}}</th>
+                        <td>{{convetResult.name}}</td>
+                        <td>{{convetResult.value}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
