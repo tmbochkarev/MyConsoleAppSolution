@@ -44,7 +44,7 @@ namespace CurrencyConverter
             foreach (var valute in valutes)
             {
                 var value = _converter.Convert(rubles, valute.Value);
-                Console.WriteLine($"{valute.Name}: {value}");
+                Console.WriteLine($"{valute.Name}: {value * valute.Nominal}");
             }
         }
 
