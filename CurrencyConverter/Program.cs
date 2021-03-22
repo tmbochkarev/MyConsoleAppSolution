@@ -26,6 +26,7 @@ namespace CurrencyConverter
             services.AddScoped<IRubleConverter, DollarConverter>();
             services.AddScoped<IRequestService, RequestService>();
             services.AddScoped<ICursesService, CursesService>();
+            services.AddScoped<Services.CurrencyConverter>();
 
             services.AddTransient<DbContext>();
             services.AddTransient<App>();

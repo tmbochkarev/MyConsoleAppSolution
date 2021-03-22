@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using CurrencyConverter.Database;
-using CurrencyConverter.Models;
+﻿using CurrencyConverter.Database;
 using CurrencyConverter.Services;
 using Moq;
 using Xunit;
@@ -10,7 +8,8 @@ namespace CurrencyConverter.Test
 {
     public class CurrencyConverterTest
     {
-        private const string JsonString = "{\"Valute\":{\"AUD\":{\"ID\":\"R01010\",\"NumCode\":\"036\",\"CharCode\":\"AUD\",\"Nominal\":1,\"Name\":\"Австралийский доллар\",\"Value\":57.6127,\"Previous\":57.5541}}}";
+        private const string JsonString =
+            "{\"Valute\":{\"AUD\":{\"ID\":\"R01010\",\"NumCode\":\"036\",\"CharCode\":\"AUD\",\"Nominal\":1,\"Name\":\"Австралийский доллар\",\"Value\":57.6127,\"Previous\":57.5541}}}";
 
         private readonly ITestOutputHelper _testOutputHelper;
 

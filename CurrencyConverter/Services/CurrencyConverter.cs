@@ -2,9 +2,9 @@
 
 namespace CurrencyConverter.Services
 {
-    internal abstract class CurrencyConverter
+    internal class CurrencyConverter
     {
-        protected virtual decimal Convert(decimal currency, decimal course)
+        public virtual decimal Convert(decimal currency, decimal course)
         {
             return Math.Round(currency / course, 2);
         }
