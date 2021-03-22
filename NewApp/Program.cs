@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using System.Linq;
 
 namespace NewApp
@@ -9,13 +10,9 @@ namespace NewApp
         {
             Console.WriteLine("Input your number here: ");
 
-            long getNumber = Convert.ToInt64(Console.ReadLine());
-            
-            int getDigitsOfTheNumber = getNumber.ToString().Sum(c => c - '0');
-
-            int getReminderOfTheNumber = getDigitsOfTheNumber % 3;
-
-            
+            var getNumber = Convert.ToInt64(Console.ReadLine());
+            var getDigitsOfTheNumber = getNumber.ToString().Sum(c => c - '0');
+            var getReminderOfTheNumber = getDigitsOfTheNumber % 3;
 
             if ( getDigitsOfTheNumber % 3 == 0 )
             {
