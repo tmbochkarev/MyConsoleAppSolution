@@ -19,17 +19,17 @@ namespace CurrencyConverter.Database
 
         public Dictionary<string, Valute> Valutes { get; set; }
 
-        public async Task<DbSingleton> GetInstanceAsync(ICursesService cursesService)
+        public static async Task<DbSingleton> GetInstanceAsync(ICursesService cursesService)
         {
             await LazyInitializer(cursesService);
             return _lazyInstance.Value;
         }
 
-        private async Task LazyInitializer(ICursesService cursesService)
+        private static async Task LazyInitializer(ICursesService cursesService)
         {
             _lazyInstance = new Lazy<DbSingleton>(() => new DbSingleton(cursesService),
                 LazyThreadSafetyMode.ExecutionAndPublication);
-            Valutes = await _lazyInstance.Value._cursesService.GetValutes();
+            _lazyInstance.Value.Valutes = await _lazyInstance.Value._cursesService.GetValutes();
         }
     }
 }

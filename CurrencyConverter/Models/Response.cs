@@ -18,7 +18,7 @@ namespace CurrencyConverter.Models
         [JsonPropertyName("Timestamp")]
         public DateTime Timestamp { get; set; }
 
-        [JsonPropertyName("Valutes")]
+        [JsonPropertyName("Valute")]
         public Dictionary<string, Valute> Valutes { get; set; }
     }
 }

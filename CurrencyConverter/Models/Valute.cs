@@ -20,9 +20,9 @@ namespace CurrencyConverter.Models
         public string Name { get; set; }
 
         [JsonPropertyName("Value")]
-        public double Value { get; set; }
+        public decimal Value { get; set; }
 
         [JsonPropertyName("Previous")]
-        public double Previous { get; set; }
+        public decimal Previous { get; set; }
     }
 }

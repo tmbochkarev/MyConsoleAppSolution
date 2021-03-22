@@ -28,6 +28,8 @@ namespace CurrencyConverter
 
             // TODO: это тоже можно! вынести в сервис
             Console.WriteLine($"Dollar is {dollar} for {rubles} rubles. Euro is {euro} for {rubles} rubles");
+
+
         }
 
         private decimal ConvertToEuro(decimal rubles)
