@@ -3,6 +3,7 @@ using CurrencyConverter.Database;
 using Microsoft.Extensions.DependencyInjection;
 using CurrencyConverter.Services;
 
+[assembly: InternalsVisibleTo("DynamicProxyGenAssembly2")]
 [assembly: InternalsVisibleTo("CurrencyConverter.Test")]
 
 namespace CurrencyConverter

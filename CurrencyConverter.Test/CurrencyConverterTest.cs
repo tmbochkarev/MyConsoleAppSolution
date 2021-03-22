@@ -1,4 +1,6 @@
-﻿using CurrencyConverter.Database;
+﻿using System.Collections.Generic;
+using CurrencyConverter.Database;
+using CurrencyConverter.Models;
 using CurrencyConverter.Services;
 using Moq;
 using Xunit;
@@ -8,6 +10,7 @@ namespace CurrencyConverter.Test
 {
     public class CurrencyConverterTest
     {
+        private const string JsonString = "{\"Valute\":{\"AUD\":{\"ID\":\"R01010\",\"NumCode\":\"036\",\"CharCode\":\"AUD\",\"Nominal\":1,\"Name\":\"Австралийский доллар\",\"Value\":57.6127,\"Previous\":57.5541}}}";
 
         private readonly ITestOutputHelper _testOutputHelper;
 
@@ -22,11 +25,13 @@ namespace CurrencyConverter.Test
         [InlineData(10000)]
         public void Convert_ToDollar_Test(decimal rubles)
         {
-            var dbContext = new Mock<DbContext>();
-            dbContext.Setup(x => x.GetCurse(It.IsAny<string>()))
-                .Returns(74.6085m);
+            var requestService = new Mock<IRequestService>();
+            requestService.Setup(x => x.Get(It.IsAny<string>()))
+                .ReturnsAsync(JsonString);
+            var cursesService = new CursesService(requestService.Object);
 
-            var converter = new DollarConverter(dbContext.Object);
+            var dbContext = new DbContext(cursesService);
+            var converter = new DollarConverter(dbContext);
             var result = converter.FromRubles(rubles);
 
             _testOutputHelper.WriteLine($"result: {result}");
@@ -39,11 +44,13 @@ namespace CurrencyConverter.Test
         [InlineData(10000)]
         public void Convert_ToEuro_Test(decimal rubles)
         {
-            var dbContext = new Mock<DbContext>();
-            dbContext.Setup(x => x.GetCurse(It.IsAny<string>()))
-                .Returns(88.6573m);
+            var requestService = new Mock<IRequestService>();
+            requestService.Setup(x => x.Get(It.IsAny<string>()))
+                .ReturnsAsync(JsonString);
+            var cursesService = new CursesService(requestService.Object);
 
-            var converter = new DollarConverter(dbContext.Object);
+            var dbContext = new DbContext(cursesService);
+            var converter = new DollarConverter(dbContext);
             var result = converter.FromRubles(rubles);
 
             _testOutputHelper.WriteLine($"result: {result}");
