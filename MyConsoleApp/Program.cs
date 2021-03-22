@@ -1,5 +1,8 @@
-﻿using System;
-using System.Globalization;
+﻿using System.Runtime.CompilerServices;
+using Microsoft.Extensions.DependencyInjection;
+using MyConsoleApp.Services;
+
+[assembly: InternalsVisibleTo("CurrencyConverter.Test")]
 
 namespace MyConsoleApp
 {
@@ -7,16 +10,22 @@ namespace MyConsoleApp
     {
         private static void Main(string[] args)
         {
-            Console.WriteLine("Input your number: ");
+            var services = ConfigureServices();
+            var serviceProvider = services.BuildServiceProvider();
 
-            var rubles = Convert.ToDecimal(Console.ReadLine(), CultureInfo.InvariantCulture);
-            var dollar = rubles / 74.25m;
-            var euro = rubles / 88.72m;
+            serviceProvider.GetService<App>()?.Start();
+        }
 
-            dollar = Math.Round(dollar, 2);
-            euro = Math.Round(euro, 2);
+        private static IServiceCollection ConfigureServices()
+        {
+            IServiceCollection services = new ServiceCollection();
 
-            Console.WriteLine($"Dollar is {dollar} for {rubles} rubles. Euro is {euro} for {rubles} rubles");
+            services.AddScoped<IRubleConverter, EuroConverter>();
+            services.AddScoped<IRubleConverter, DollarConverter>();
+
+            services.AddTransient<App>();
+
+            return services;
         }
     }
 }
