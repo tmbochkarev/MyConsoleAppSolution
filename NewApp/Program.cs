@@ -13,8 +13,10 @@ namespace NewApp
             // todo: sum - возможно, есть более легковеснное решение
             var getDigitsOfTheNumber = getNumber.ToString().Sum(c => c - '0');
             var getReminderOfTheNumber = getDigitsOfTheNumber % 3;
-
             if (getDigitsOfTheNumber % 3 == 0)
+
+
+
             {
                 Console.WriteLine($"Number {getNumber} divides on 3 without the reminder");
             }
