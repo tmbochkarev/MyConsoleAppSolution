@@ -1,4 +1,4 @@
-﻿using MyConsoleApp.Services;
+﻿using CurrencyConverter.Services;
 using Xunit;
 using Xunit.Abstractions;
 

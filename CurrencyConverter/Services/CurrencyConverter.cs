@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MyConsoleApp.Services
+namespace CurrencyConverter.Services
 {
     internal abstract class CurrencyConverter
     {

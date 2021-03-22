@@ -1,10 +1,10 @@
 ﻿using System.Runtime.CompilerServices;
 using Microsoft.Extensions.DependencyInjection;
-using MyConsoleApp.Services;
+using CurrencyConverter.Services;
 
 [assembly: InternalsVisibleTo("CurrencyConverter.Test")]
 
-namespace MyConsoleApp
+namespace CurrencyConverter
 {
     internal class Program
     {

@@ -1,11 +1,11 @@
-﻿namespace MyConsoleApp.Services
+﻿namespace CurrencyConverter.Services
 {
-    internal class EuroConverter : CurrencyConverter, IRubleConverter
+    internal class DollarConverter : CurrencyConverter, IRubleConverter
     {
         public decimal FromRubles(decimal rubles)
         {
             // todo: получение из базы или внешнего источника
-            const decimal course = 88.72m;
+            const decimal course = 74.25m;
             return Convert(rubles, course);
         }
     }

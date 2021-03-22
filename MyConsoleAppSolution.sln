@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyConsoleApp", "MyConsoleApp\MyConsoleApp.csproj", "{3BE422DD-E785-48E5-9579-800B436C9A3D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CurrencyConverter", "CurrencyConverter\CurrencyConverter.csproj", "{3BE422DD-E785-48E5-9579-800B436C9A3D}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NewApp", "NewApp\NewApp.csproj", "{D985A08E-BFF3-4A47-B526-C23652F115A1}"
 EndProject

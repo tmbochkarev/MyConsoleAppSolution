@@ -1,4 +1,4 @@
-﻿namespace MyConsoleApp.Services
+﻿namespace CurrencyConverter.Services
 {
     internal interface IRubleConverter
     {
