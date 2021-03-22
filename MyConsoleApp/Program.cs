@@ -3,20 +3,20 @@ using System.Globalization;
 
 namespace MyConsoleApp
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             Console.WriteLine("Input your number: ");
 
-            var rouble = Convert.ToDecimal(Console.ReadLine(), CultureInfo.InvariantCulture);
-            var dollar = rouble / (decimal)74.25;
-            var euro = rouble / (decimal)88.72;
+            var rubles = Convert.ToDecimal(Console.ReadLine(), CultureInfo.InvariantCulture);
+            var dollar = rubles / (decimal) 74.25;
+            var euro = rubles / (decimal) 88.72;
 
             dollar = Math.Round(dollar, 2);
             euro = Math.Round(euro, 2);
 
-            Console.WriteLine($"Dollar is {dollar} for {rouble} roubles. Euro is {euro} for {rouble} roubles");
+            Console.WriteLine($"Dollar is {dollar} for {rubles} rubles. Euro is {euro} for {rubles} rubles");
         }
     }
 }
