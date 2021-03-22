@@ -1,4 +1,5 @@
 ﻿using System.Runtime.CompilerServices;
+using CurrencyConverter.Database;
 using Microsoft.Extensions.DependencyInjection;
 using CurrencyConverter.Services;
 
@@ -25,6 +26,7 @@ namespace CurrencyConverter
             services.AddScoped<IRequestService, RequestService>();
             services.AddScoped<ICursesService, CursesService>();
 
+            services.AddTransient<DbContext>();
             services.AddTransient<App>();
 
             return services;
