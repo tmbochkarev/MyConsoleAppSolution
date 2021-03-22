@@ -11,9 +11,9 @@ namespace NewApp
 
             long getNumber = Convert.ToInt64(Console.ReadLine());
             
-            int getDigitsOfTheNumber = getNumber.ToString().Sum(c => c - '0');
+            byte getDigitsOfTheNumber = Convert.ToByte(getNumber.ToString().Sum(c => c - '0'));
 
-            int getReminderOfTheNumber = getDigitsOfTheNumber % 3;
+            byte getReminderOfTheNumber = Convert.ToByte(getDigitsOfTheNumber % 3);
 
             
 
