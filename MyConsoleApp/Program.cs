@@ -10,8 +10,8 @@ namespace MyConsoleApp
             Console.WriteLine("Input your number: ");
 
             var rubles = Convert.ToDecimal(Console.ReadLine(), CultureInfo.InvariantCulture);
-            var dollar = rubles / (decimal) 74.25;
-            var euro = rubles / (decimal) 88.72;
+            var dollar = rubles / 74.25m;
+            var euro = rubles / 88.72m;
 
             dollar = Math.Round(dollar, 2);
             euro = Math.Round(euro, 2);
