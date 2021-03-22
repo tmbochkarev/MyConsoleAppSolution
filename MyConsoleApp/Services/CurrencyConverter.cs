@@ -2,7 +2,7 @@
 
 namespace MyConsoleApp.Services
 {
-    public abstract class CurrencyConverter
+    internal abstract class CurrencyConverter
     {
         protected virtual decimal Convert(decimal currency, decimal course)
         {

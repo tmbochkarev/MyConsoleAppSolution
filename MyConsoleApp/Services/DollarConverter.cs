@@ -1,6 +1,6 @@
 ﻿namespace MyConsoleApp.Services
 {
-    public class DollarConverter : CurrencyConverter, IRubleConverter
+    internal class DollarConverter : CurrencyConverter, IRubleConverter
     {
         public decimal FromRubles(decimal rubles)
         {

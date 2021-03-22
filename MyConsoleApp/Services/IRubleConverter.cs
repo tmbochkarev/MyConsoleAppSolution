@@ -1,6 +1,6 @@
 ﻿namespace MyConsoleApp.Services
 {
-    public interface IRubleConverter
+    internal interface IRubleConverter
     {
         decimal FromRubles(decimal rubles);
     }
